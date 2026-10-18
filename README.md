@@ -4,31 +4,38 @@ A native **OpenCode 2** plugin for Suno music, lyrics and task results. Install 
 
 Independent integration by **Ace Data Cloud**. It is not made or endorsed by the Suno or OpenCode teams. [简体中文](readme/README_zh_Hans.md) · [Privacy](PRIVACY.md) · [Source/provenance](docs/SOURCES.md).
 
-## 1. Install with OpenCode's plugin manager
+## 1. Install the released plugin
 
-Requires OpenCode **2.0.26+**. OpenCode 1's plugin API is different. Run `opencode --version` first. For OpenCode 2 installation, see the [official guide](https://opencode.ai/v2/docs/).
+Requires **OpenCode 2.0.26+**. Check `opencode --version`; OpenCode 1 has a different plugin API.
+See [OpenCode's plugin manager](https://opencode.ai/v2/docs/plugins/).
 
-The reviewed Git package is the distribution path; this package is not yet published on npm. The official ecosystem-directory submission is pending and is not an endorsement.
+The implementation is merged on `main`. Install through the official Git-package mechanism:
 
 ```bash
 opencode plugin add github:AceDataCloud/SunoOpenCode
 ```
 
-Until the implementation PR is merged, use its explicit review branch instead:
+For a fixed version, use the **v0.1.0** Git release:
 
 ```bash
-opencode plugin add 'github:AceDataCloud/SunoOpenCode#codex/suno-native-plugin'
+opencode plugin add 'github:AceDataCloud/SunoOpenCode#v0.1.0'
 ```
 
-The Git SSH form below was also verified with the official plugin manager; it uses your existing GitHub SSH access if the HTTPS shortcut is unavailable:
+If your network cannot reach the HTTPS shortcut, the official Git SSH form uses your existing GitHub SSH access:
 
 ```bash
-opencode plugin add 'git+ssh://git@github.com/AceDataCloud/SunoOpenCode.git#codex/suno-native-plugin'
+opencode plugin add 'git+ssh://git@github.com/AceDataCloud/SunoOpenCode.git#v0.1.0'
 ```
 
-Review the branch contents before installing a candidate. After the reviewed main version is available, remove the candidate with `opencode plugin remove 'github:AceDataCloud/SunoOpenCode#codex/suno-native-plugin'` and install the main target above. Do not install both.
+[Release notes and source archive](https://github.com/AceDataCloud/SunoOpenCode/releases/tag/v0.1.0).
+Git release and npm publication are separate: npm availability is not claimed here.
+The [OpenCode community-directory submission](https://github.com/anomalyco/opencode/pull/56666)
+remains under review and is not an endorsement or an in-product marketplace listing.
+If you installed an earlier candidate target, remove that exact target with `opencode plugin remove`
+before adding the released target. Install only one copy.
 
-The package adds a native **Suno by Ace Data Cloud** credential entry, a hosted `suno-by-acedatacloud` MCP server and a `suno-music` Skill. It does not select or pay for your chat model. Select your existing model separately.
+Installing registers **Suno by Ace Data Cloud** as a native key/env connection,
+a fixed hosted MCP server, and a task Skill. It does not select your chat model or authorize generation.
 
 ## 2. Register or sign in and obtain an application API Token
 
