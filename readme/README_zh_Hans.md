@@ -4,29 +4,33 @@
 
 这是 **Ace Data Cloud** 提供的独立集成，不是 Suno 或 OpenCode 官方产品，也没有宣称获得其背书。[English](../README.md) · [隐私与费用](../PRIVACY.md) · [图片来源](../docs/SOURCES.md)。
 
-## 1. 通过 OpenCode 插件管理器安装
+## 1. 安装已合并插件
 
-要求 **OpenCode 2.0.26+**。先运行 `opencode --version`；OpenCode 1 插件 API 不同。版本安装见 [官方文档](https://opencode.ai/v2/docs/)。
+要求 **OpenCode 2.0.26+**，先 `opencode --version` 核对。OpenCode 1 的插件API不同。
+[官方插件管理器](https://opencode.ai/v2/docs/plugins/)。
 
-本插件使用官方支持的 Git 包分发；尚未发布 npm，官方生态目录投稿也不等于已收录。审查合并后使用：
+实现已进入 `main`，可通过官方Git包机制安装：
 
 ```bash
 opencode plugin add github:AceDataCloud/SunoOpenCode
 ```
 
-实现 PR 尚未合并时，只能选择明确的候选分支：
+需要固定版本时使用 **v0.1.0** Git版本：
 
 ```bash
-opencode plugin add 'github:AceDataCloud/SunoOpenCode#codex/suno-native-plugin'
+opencode plugin add 'github:AceDataCloud/SunoOpenCode#v0.1.0'
 ```
 
-如果 HTTPS 快捷地址受本机网络影响，可使用本轮已由官方插件管理器验证的 Git SSH 形式（沿用你已有的 GitHub SSH 访问，不要求扩权）：
+HTTPS快捷地址受本机网络影响时，可沿用已有GitHub SSH访问：
 
 ```bash
-opencode plugin add 'git+ssh://git@github.com/AceDataCloud/SunoOpenCode.git#codex/suno-native-plugin'
+opencode plugin add 'git+ssh://git@github.com/AceDataCloud/SunoOpenCode.git#v0.1.0'
 ```
 
-安装候选前先审查代码。主线发布后，先 `opencode plugin remove 'github:AceDataCloud/SunoOpenCode#codex/suno-native-plugin'` 再装主线，不要同时装两份。插件添加原生 **Suno by Ace Data Cloud** 凭据入口、`suno-by-acedatacloud` MCP 和 Suno Skill；聊天模型仍由用户自行选择和计费。
+[发行说明与源码归档](https://github.com/AceDataCloud/SunoOpenCode/releases/tag/v0.1.0)。
+Git版本与npm发布分开记，本文不宣称npm已发布；[官方社区目录投稿](https://github.com/anomalyco/opencode/pull/56666)仍待审，非官方背书或产品内商城上架。
+此前装过候选分支时先用 `opencode plugin remove` 移除原完整目标，再装正式目标，只保留一份。
+安装添加 **Suno by Ace Data Cloud** 的原生Key/env入口、固定托管MCP与任务Skill，不替你选择聊天模型，也不自动授权生成。
 
 ## 2. 注册登录并获取应用 API Token
 
