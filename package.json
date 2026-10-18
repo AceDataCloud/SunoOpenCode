@@ -1,0 +1,56 @@
+{
+  "name": "@acedatacloud/opencode-suno",
+  "version": "0.1.0",
+  "description": "Suno music generation, lyrics and same-task results in OpenCode 2, provided by Ace Data Cloud.",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./server": "./index.js"
+  },
+  "files": [
+    "index.js",
+    "src",
+    "skills",
+    "README.md",
+    "readme",
+    "PRIVACY.md",
+    "LICENSE",
+    "assets",
+    "docs/SOURCES.md"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check index.js && node --check src/index.js && node --check src/plugin.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "suno",
+    "music",
+    "lyrics",
+    "acedatacloud",
+    "mcp"
+  ],
+  "author": "Ace Data Cloud Dev <dev@acedata.cloud>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AceDataCloud/SunoOpenCode.git"
+  },
+  "homepage": "https://github.com/AceDataCloud/SunoOpenCode#readme",
+  "bugs": {
+    "url": "https://github.com/AceDataCloud/SunoOpenCode/issues"
+  },
+  "peerDependencies": {
+    "@opencode/plugin": "^2.0.26"
+  },
+  "peerDependenciesMeta": {
+    "@opencode/plugin": {
+      "optional": true
+    }
+  },
+  "main": "./index.js"
+}
