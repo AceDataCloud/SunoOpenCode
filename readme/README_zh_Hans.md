@@ -20,6 +20,12 @@ opencode plugin add github:AceDataCloud/SunoOpenCode
 opencode plugin add 'github:AceDataCloud/SunoOpenCode#codex/suno-native-plugin'
 ```
 
+如果 HTTPS 快捷地址受本机网络影响，可使用本轮已由官方插件管理器验证的 Git SSH 形式（沿用你已有的 GitHub SSH 访问，不要求扩权）：
+
+```bash
+opencode plugin add 'git+ssh://git@github.com/AceDataCloud/SunoOpenCode.git#codex/suno-native-plugin'
+```
+
 安装候选前先审查代码。主线发布后，先 `opencode plugin remove 'github:AceDataCloud/SunoOpenCode#codex/suno-native-plugin'` 再装主线，不要同时装两份。插件添加原生 **Suno by Ace Data Cloud** 凭据入口、`suno-by-acedatacloud` MCP 和 Suno Skill；聊天模型仍由用户自行选择和计费。
 
 ## 2. 注册登录并获取应用 API Token
@@ -28,13 +34,13 @@ opencode plugin add 'github:AceDataCloud/SunoOpenCode#codex/suno-native-plugin'
 2. 核对 Suno 权限、余额与 [当前价格](https://platform.acedata.cloud/models?utm_source=github&utm_medium=referral&utm_campaign=evergreen&utm_content=opencode_suno_plugin_zh_pricing)。专用应用的 Token 可能只允许该服务。
 3. 在卡片复制 API Key；也可进入 **Manage Keys → Create** 创建名为 `OpenCode Suno` 的独立 Key。
 
-![Ace 应用里复制 Key 或进入管理；这不是 OpenCode 界面](https://raw.githubusercontent.com/AceDataCloud/SunoDify/8d3d03570e73324220f111f7fe343da0792a8071/_assets/tutorial/get-api-key-en.png)
+![Ace 应用里复制 Key 或进入管理；这不是 OpenCode 界面](../assets/get-api-key-en.png)
 
 4. 核对有效期和用量限制。如启用 **Allowed APIs**，音乐首用至少允许 `/suno/audios`、`/suno/tasks`；歌词等操作可能需要其他 API。
 
-![创建单独的应用 Key；真实凭据已遮挡](https://raw.githubusercontent.com/AceDataCloud/SunoDify/8d3d03570e73324220f111f7fe343da0792a8071/_assets/tutorial/create-api-key-en.png)
+![创建单独的应用 Key；真实凭据已遮挡](../assets/create-api-key-en.png)
 
-图片复用作者自有 SunoDify 教程的固定 commit，2026-10-18 收集使用；它们说明 Ace 账号步骤，不是 OpenCode 操作。复制原始 Token，不加 `Bearer `、空格或引号。`platform-...` 管理 Token 不能代替生成 Key。以账号实际显示的余额为准，不保证免费额度。
+图片复用作者自有 SunoDify 教程的固定 commit，2026-10-18 收集使用；它们说明 Ace 账号步骤，不是 OpenCode 操作。图中 `Dify tutorial` 是原教程示例名，这里请填 `OpenCode Suno`。复制原始 Token，不加 `Bearer `、空格或引号。`platform-...` 管理 Token 不能代替生成 Key。以账号实际显示的余额为准，不保证免费额度。
 
 ## 3. 在 OpenCode 原生入口粘贴
 

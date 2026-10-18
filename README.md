@@ -20,6 +20,12 @@ Until the implementation PR is merged, use its explicit review branch instead:
 opencode plugin add 'github:AceDataCloud/SunoOpenCode#codex/suno-native-plugin'
 ```
 
+The Git SSH form below was also verified with the official plugin manager; it uses your existing GitHub SSH access if the HTTPS shortcut is unavailable:
+
+```bash
+opencode plugin add 'git+ssh://git@github.com/AceDataCloud/SunoOpenCode.git#codex/suno-native-plugin'
+```
+
 Review the branch contents before installing a candidate. After the reviewed main version is available, remove the candidate with `opencode plugin remove 'github:AceDataCloud/SunoOpenCode#codex/suno-native-plugin'` and install the main target above. Do not install both.
 
 The package adds a native **Suno by Ace Data Cloud** credential entry, a hosted `suno-by-acedatacloud` MCP server and a `suno-music` Skill. It does not select or pay for your chat model. Select your existing model separately.
@@ -30,13 +36,13 @@ The package adds a native **Suno by Ace Data Cloud** credential entry, a hosted 
 2. Check Suno service access, application balance and [current pricing](https://platform.acedata.cloud/models?utm_source=github&utm_medium=referral&utm_campaign=evergreen&utm_content=opencode_suno_plugin_readme_pricing). A dedicated application's token may only access that service.
 3. Copy the API Key, or choose **Manage Keys → Create** for a separately named `OpenCode Suno` token.
 
-![Copy an API key or open Manage Keys — Ace account tutorial, not OpenCode](https://raw.githubusercontent.com/AceDataCloud/SunoDify/8d3d03570e73324220f111f7fe343da0792a8071/_assets/tutorial/get-api-key-en.png)
+![Copy an API key or open Manage Keys — Ace account tutorial, not OpenCode](assets/get-api-key-en.png)
 
 4. Review expiry and usage limits. If enabling **Allowed APIs**, include `/suno/audios` and `/suno/tasks` for music and same-task lookup. Other operations, such as lyrics, may need additional APIs.
 
-![Create a separate restricted application key — redacted Ace tutorial](https://raw.githubusercontent.com/AceDataCloud/SunoDify/8d3d03570e73324220f111f7fe343da0792a8071/_assets/tutorial/create-api-key-en.png)
+![Create a separate restricted application key — redacted Ace tutorial](assets/create-api-key-en.png)
 
-These existing author-owned screenshots are from the SunoDify tutorial commit shown in each URL, reused 2026-10-18. They show Ace account steps, not OpenCode; real key characters are redacted. Copy the raw token, without `Bearer `, spaces or quotes. A `platform-...` management token is not a generation API Token. No free-credit amount is promised.
+These existing author-owned screenshots are from the SunoDify tutorial commit shown in each URL, reused 2026-10-18. They show Ace account steps, not OpenCode; real key characters are redacted. The screenshot name `Dify tutorial` is from that source; use `OpenCode Suno` for this integration. Copy the raw token, without `Bearer `, spaces or quotes. A `platform-...` management token is not a generation API Token. No free-credit amount is promised.
 
 ## 3. Paste the token in OpenCode
 
