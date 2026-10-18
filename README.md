@@ -95,3 +95,5 @@ only identify audio links as final when the task confirms completion.
 | Duplicate/user-defined server | An existing `suno-by-acedatacloud` MCP config takes precedence; this plugin does not overwrite it. |
 
 Chat-model charges and Suno charges are separate. Successful installation/connection is not a completed song, unique-bill proof or evidence of customer revenue. [API documentation](https://platform.acedata.cloud/documents/suno-mcp?utm_source=github&utm_medium=referral&utm_campaign=evergreen&utm_content=opencode_suno_plugin_readme_docs) · [Support](https://github.com/AceDataCloud/SunoOpenCode/issues).
+
+[Reproduce the free packed-package host check](docs/VERIFY.md). This is not a generation, official-listing or billing test.

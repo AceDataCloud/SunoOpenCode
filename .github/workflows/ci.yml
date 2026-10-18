@@ -11,3 +11,13 @@ jobs:
       - run: npm test
       - run: npm run check
       - run: npm pack --dry-run
+      - name: Install exact OpenCode host for free package acceptance
+        run: npm install --prefix "$RUNNER_TEMP/opencode-host" --no-save @opencode/cli@2.0.26
+      - name: Verify packed package in real OpenCode (no credentials or generation)
+        env:
+          OPENCODE_E2E_OUTPUT: artifacts/host-e2e.json
+        run: OPENCODE_BIN="$RUNNER_TEMP/opencode-host/node_modules/.bin/opencode" npm run test:e2e
+      - uses: actions/upload-artifact@v4
+        with:
+          name: packed-host-e2e
+          path: artifacts/host-e2e.json

@@ -83,3 +83,5 @@ opencode plugin add 'git+ssh://git@github.com/AceDataCloud/SunoOpenCode.git#code
 - 已有同名配置：用户自己的 `suno-by-acedatacloud` 配置优先，插件不会覆盖。
 
 聊天模型和 Suno 服务费用分开。安装/连接成功不证明歌曲完成、唯一账单或营收。[API 文档](https://platform.acedata.cloud/documents/suno-mcp?utm_source=github&utm_medium=referral&utm_campaign=evergreen&utm_content=opencode_suno_plugin_zh_docs) · [反馈](https://github.com/AceDataCloud/SunoOpenCode/issues)。
+
+[复现无需凭据/生成的真实宿主包检查](../docs/VERIFY.md)，不等于完整生成、官方收录或账单验收。
